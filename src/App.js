@@ -19,7 +19,7 @@ const App=()=> {
     num: 0,
     res: 0,
    });
-
+  // NumberClick function
    const numClickHandler = (e) => {
     e.preventDefault();
     const value = e.target.innerHTML;
@@ -36,7 +36,17 @@ const App=()=> {
       });
     }
    }
+  // commaClickHandler
 
+  const commaClickHandler = (e) => {
+    e.preventDefault();
+    const value = e.target.innerHTML;
+
+    setCalc({
+      ...calc,
+      num: !calc.num.toString().includes(".") ? calc.num + value : calc.num,
+    });
+  };
 
   return (
     <Wrapper>
